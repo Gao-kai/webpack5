@@ -1,0 +1,11 @@
+.example{
+	/* 此css属性用于规定用户是否可以选中页面上的文本，多个版本浏览器对其实现不一样，需要在不同浏览器中添加对应前缀 */
+	-webkit-user-select:none;
+	   -moz-user-select:none;
+	    -ms-user-select:none;
+	        user-select:none; 
+	display: grid;
+	transition: all .5s;
+	background: linear-gradient(to bottom, white, black);
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsNERBQTREO0NBQzVELHdCQUFnQjtJQUFoQixxQkFBZ0I7S0FBaEIsb0JBQWdCO1NBQWhCLGdCQUFnQjtDQUNoQixhQUFhO0NBQ2IsbUJBQW1CO0NBQ25CLG9EQUFvRDtBQUNyRCIsImZpbGUiOiJyZXN1bHQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGV7XHJcblx0Lyog5q2kY3Nz5bGe5oCn55So5LqO6KeE5a6a55So5oi35piv5ZCm5Y+v5Lul6YCJ5Lit6aG16Z2i5LiK55qE5paH5pys77yM5aSa5Liq54mI5pys5rWP6KeI5Zmo5a+55YW25a6e546w5LiN5LiA5qC377yM6ZyA6KaB5Zyo5LiN5ZCM5rWP6KeI5Zmo5Lit5re75Yqg5a+55bqU5YmN57yAICovXHJcblx0dXNlci1zZWxlY3Q6bm9uZTsgXHJcblx0ZGlzcGxheTogZ3JpZDtcclxuXHR0cmFuc2l0aW9uOiBhbGwgLjVzO1xyXG5cdGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCh0byBib3R0b20sIHdoaXRlLCBibGFjayk7XHJcbn0iXX0= */
