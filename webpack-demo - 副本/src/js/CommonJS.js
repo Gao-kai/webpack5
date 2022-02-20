@@ -1,10 +1,12 @@
-function CommonSum (a,b) {
+const CommonSum = (a,b)=>{
 	return a+b;
 }
 
-function CommonMul (a,b){
+const CommonMul = (a,b)=>{
 	return a*b;
 }
+
+console.log(foo);
 
 module.exports = {
 	CommonSum,
