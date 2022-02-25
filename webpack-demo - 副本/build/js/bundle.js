@@ -7,18 +7,17 @@
   \****************************/
 /***/ (function(module) {
 
-var CommonSum = function CommonSum(a, b) {
+const CommonSum = (a, b) => {
   return a + b;
 };
 
-var CommonMul = function CommonMul(a, b) {
+const CommonMul = (a, b) => {
   return a * b;
 };
 
-console.log(foo);
 module.exports = {
-  CommonSum: CommonSum,
-  CommonMul: CommonMul
+  CommonSum,
+  CommonMul
 };
 
 /***/ })
@@ -103,8 +102,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_CommonJS_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_CommonJS_js__WEBPACK_IMPORTED_MODULE_0__);
 /* THIS IS A ES MODULE 导入了一个CommonJS模块 */
 
-consolo.log((0,_js_CommonJS_js__WEBPACK_IMPORTED_MODULE_0__.CommonSum)(10, ESModulec));
-consolo.log((0,_js_CommonJS_js__WEBPACK_IMPORTED_MODULE_0__.CommonMul)(10, ESModulec)); // const {ESModuleSum,ESModuleMul,ESModulec} = require('./js/ESModule.js')
+consolo.log((0,_js_CommonJS_js__WEBPACK_IMPORTED_MODULE_0__.CommonSum)(10, 20));
+consolo.log((0,_js_CommonJS_js__WEBPACK_IMPORTED_MODULE_0__.CommonMul)(10, 20)); // const {ESModuleSum,ESModuleMul,ESModulec} = require('./js/ESModule.js')
 // consolo.log(ESModuleSum(10,ESModulec))
 // consolo.log(ESModuleMul(10,ESModulec))
 }();
