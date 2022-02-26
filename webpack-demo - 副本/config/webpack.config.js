@@ -16,15 +16,29 @@ module.exports = {
 		rules:[
 			{
 				test:/\.js$/,
+				exclude:/node_modules/,
 				use:{
 					loader:"babel-loader",
-					/* options:{
-						presets:[
-							["@babel/preset-env",{
-								targets:'chrome 88'
-							}]
-						]
-					} */
+					options:{
+						// presets:[
+						// 	["@babel/preset-env",{
+						// 		// useBuiltIns:"false"
+						// 	}],
+						// 	["@babel/preset-react"]
+						// ],
+						// plugins:[
+						// 	["@babel/plugin-transform-runtime",{
+						// 		"corejs":3
+						// 	}]
+						// ]
+					}
+				}
+			},
+			{
+				test:/\.ts$/,
+				exclude:/node_modules/,
+				use:{
+					loader:"babel-loader"
 				}
 			}
 		]
@@ -32,7 +46,8 @@ module.exports = {
 	plugins:[
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			title:"webpack module"
+			title:"webpack module",
+			template:'./index.html'
 		}),
 		new DefinePlugin({
 			BASE_URL:JSON.stringify('./'), 
