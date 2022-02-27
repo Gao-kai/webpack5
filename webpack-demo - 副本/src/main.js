@@ -2,7 +2,9 @@
 // import "core-js/stable";
 // import "regenerator-runtime/runtime";
 // import './react/index.js';
-import "./ts/index.ts";
+// import "./ts/index.ts";
+import './vue/index.js';
+
 
 import {
 	CommonSum,

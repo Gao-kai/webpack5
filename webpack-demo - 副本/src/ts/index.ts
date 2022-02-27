@@ -3,7 +3,7 @@ function sum(a:number,b:number){
 	return a+b;
 }
 
-console.log(sum(0,'100'));
+console.log(sum(0,100));
 
 function getData(){
 	return new Promise((resolve,reject)=>{

@@ -1,56 +1,68 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { DefinePlugin } = require('webpack');
+const path = require("path");
+const {
+	CleanWebpackPlugin
+} = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {
+	DefinePlugin
+} = require("webpack");
+const {
+	VueLoaderPlugin
+} = require('vue-loader');
 
 module.exports = {
-	mode:"development",
-	devtool:"nosources-source-map",
+	watch:true,
+	mode: "development",
+	devtool: "nosources-source-map",
 	entry: "./src/main.js",
 	output: {
 		filename: "js/bundle.js",
-		path: path.resolve(__dirname, '../build'),
+		path: path.resolve(__dirname, "../build"),
 		// assetModuleFilename:"img/[name]-[hash:6][ext]"
 	},
-	module:{
-		rules:[
+	module: {
+		rules: [
 			{
-				test:/\.js$/,
-				exclude:/node_modules/,
-				use:{
-					loader:"babel-loader",
-					options:{
-						// presets:[
-						// 	["@babel/preset-env",{
-						// 		// useBuiltIns:"false"
-						// 	}],
-						// 	["@babel/preset-react"]
-						// ],
-						// plugins:[
-						// 	["@babel/plugin-transform-runtime",{
-						// 		"corejs":3
-						// 	}]
-						// ]
-					}
-				}
+				test:/\.less$/,
+				use:[
+					"style-loader",
+					{
+						loader:"css-loader",
+						options:{
+							importLoaders:2
+						}
+					},
+					"postcss-loader",
+					"less-loader",
+				]
 			},
 			{
-				test:/\.ts$/,
-				exclude:/node_modules/,
-				use:{
-					loader:"babel-loader"
-				}
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: ["babel-loader"],
+			},
+			{
+				test: /\.ts$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "babel-loader",
+				},
+			},
+			{
+				test: /\.vue$/,
+				use: "vue-loader"
 			}
-		]
+		],
 	},
-	plugins:[
+	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			title:"webpack module",
-			template:'./index.html'
+			title: "webpack module",
+			template: "./index.html",
 		}),
 		new DefinePlugin({
-			BASE_URL:JSON.stringify('./'), 
-		})
-	]
-}
+			BASE_URL: JSON.stringify("./"),
+		}),
+		new VueLoaderPlugin()
+	],
+};
