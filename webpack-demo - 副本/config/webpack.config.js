@@ -10,26 +10,29 @@ const {
 	VueLoaderPlugin
 } = require('vue-loader');
 
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 module.exports = {
-	watch:true,
+	// watch:true,
 	mode: "development",
 	devtool: "nosources-source-map",
 	entry: "./src/main.js",
+	devServer:{
+		hot:true
+	},
 	output: {
 		filename: "js/bundle.js",
 		path: path.resolve(__dirname, "../build"),
 		// assetModuleFilename:"img/[name]-[hash:6][ext]"
 	},
 	module: {
-		rules: [
-			{
-				test:/\.less$/,
-				use:[
+		rules: [{
+				test: /\.less$/,
+				use: [
 					"style-loader",
 					{
-						loader:"css-loader",
-						options:{
-							importLoaders:2
+						loader: "css-loader",
+						options: {
+							importLoaders: 2
 						}
 					},
 					"postcss-loader",
@@ -37,7 +40,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: ["babel-loader"],
 			},
@@ -63,6 +66,7 @@ module.exports = {
 		new DefinePlugin({
 			BASE_URL: JSON.stringify("./"),
 		}),
-		new VueLoaderPlugin()
+		new ReactRefreshWebpackPlugin(),
+		new VueLoaderPlugin(),
 	],
 };

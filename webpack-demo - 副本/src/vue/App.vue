@@ -1,8 +1,6 @@
 <template>
-	<div id="app">
-		<div class="demo">
-			{{message}}
-		</div>
+	<div class="demo">
+		{{message}}
 	</div>
 </template>
 

@@ -13,5 +13,4 @@ class App extends Component {
 		return(<div>{this.state.message}</div>)
 	}
 }
-
-ReactDom.render(<App/>,document.getElementById('app'));
+export default App;
