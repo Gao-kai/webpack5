@@ -3,20 +3,20 @@
 // import "regenerator-runtime/runtime";
 // import './react/index.jsx';
 // import "./ts/index.ts";
-import './vue/index.js';
-import './index.js'
+// import './vue/index.js';
+// import './index.js'
 import ReactDom from "react-dom";
 import React from 'react';
 import App from './react/index.jsx'
 
-import {
-	CommonSum,
-	CommonMul
-} from "./js/CommonJS.js"
+// import {
+// 	CommonSum,
+// 	CommonMul
+// } from "./js/CommonJS.js"
 
 
-console.log(CommonSum(10,20))
-console.log(CommonMul(10,20))
+// console.log(CommonSum(10,20))
+// console.log(CommonMul(10,20))
 
 
 if(module.hot){

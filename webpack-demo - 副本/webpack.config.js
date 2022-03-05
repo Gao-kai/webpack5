@@ -11,17 +11,28 @@ const {
 } = require('vue-loader');
 
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+
 module.exports = {
 	// watch:true,
 	mode: "development",
 	devtool: "nosources-source-map",
 	entry: "./src/main.js",
 	devServer:{
-		hot:true
+		hot:'only',
+		port:5555,
+		compress:true,
+		open:false,
+		static:{
+			directory:path.resolve(__dirname,"./vender"),
+			publicPath:'/vender'
+		},
+		historyApiFallback:true
+		
 	},
 	output: {
 		filename: "js/bundle.js",
-		path: path.resolve(__dirname, "../build"),
+		path: path.resolve(__dirname, "./build"),
+		publicPath:"/"
 		// assetModuleFilename:"img/[name]-[hash:6][ext]"
 	},
 	module: {

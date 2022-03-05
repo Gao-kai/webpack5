@@ -4,9 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "webpack --config ./config/webpack.config.js",
-		"watch": "webpack --watch ./config/webpack.config.js",
-		"serve": "webpack serve --config ./config/webpack.config.js --open",
+		"build": "webpack",
+		"watch": "webpack --watch ",
+		"serve": "webpack serve",
 		"type-check": "tsc --noEmit",
 		"type-check-watch": "tsc --noEmit --watch"
 	},
@@ -46,6 +46,8 @@
 		"postcss-loader": "^6.2.1",
 		"postcss-preset-env": "^7.3.1",
 		"react-refresh": "^0.11.0",
+		"react-router": "^6.2.2",
+		"react-router-dom": "5.2.0",
 		"recast": "^0.20.5",
 		"style-loader": "^3.3.1",
 		"ts-loader": "^9.2.6",
