@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[936],{6667:function(e,c,n){n.r(c);var t=document.createElement("h2");t.innerHTML="这是懒加载的页面代码",t.style.color="pink",c.default=t}}]);

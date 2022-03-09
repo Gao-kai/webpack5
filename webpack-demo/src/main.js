@@ -38,6 +38,23 @@ import(/* webpackChunkName:"tiny" */'./test/async1.js').then(res=>{
 	console.log(res);
 })
 
+
+/* 7. 代码懒加载 */
+const btn = document.createElement('button');
+btn.innerHTML = "点击加载";
+document.body.appendChild(btn);
+
+btn.addEventListener('click',()=>{
+	import(
+	/* webpackChunkName:"lazyload" */
+	/* webpackPrefetch:true */
+	'./lazyload/element.js').then(({default:ele})=>{
+		console.log(ele);
+		document.body.appendChild(ele);
+	})
+})
+
+
 console.log('这是main.js入口相关的代码');
 
 /* 7. HMR相关代码 代表当前文件支持HMR热更新 */
