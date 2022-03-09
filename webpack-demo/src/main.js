@@ -1,14 +1,46 @@
-import {sum,mul} from './js/utils.js';
-import './js/component.js';
-
-const {getDate,getPrice} = require('./js/share.js');
-
-const a = 20;
-const b = 10;
-
-console.log(sum(a,b));
-console.log(mul(a,b));
+/* 1. 使用polyfill入口文件配置相关代码 */
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
 
 
-console.log(getDate());
-console.log(getPrice());
+/* 2. React组件入口代码 */
+// import './react/index.jsx';
+// import ReactDom from "react-dom";
+// import React from 'react';
+// import App from './react/index.jsx'
+// ReactDom.render(<App/>,document.getElementById('app'));
+
+
+/* 3. Vue组件入口代码 */
+// import './vue/index.js';
+
+
+/* 4. TypeScript入口代码 */
+// import "./ts/index.ts";
+
+
+/* 5. 演示webpack模块化打包原理代码 */
+// import { CommonSum, CommonMul } from "./js/CommonJS.js"
+// console.log(CommonSum(10,20))
+// console.log(CommonMul(10,20))
+// const {ESModuleSum,ESModuleMul,ESModulec} = require('./js/ESModule.js')
+// consolo.log(ESModuleSum(10,ESModulec))
+// consolo.log(ESModuleMul(10,ESModulec))
+
+
+/* 6. CodeSplit入口代码 */
+import "./test/common-key.js";
+import "./test/common-value.js";
+import _ from "lodash";
+console.log(_.join(['c','d']));
+
+import(/* webpackChunkName:"tiny" */'./test/async1.js').then(res=>{
+	console.log(res);
+})
+
+console.log('这是main.js入口相关的代码');
+
+/* 7. HMR相关代码 代表当前文件支持HMR热更新 */
+if(module.hot){
+	module.hot.accept();
+}
