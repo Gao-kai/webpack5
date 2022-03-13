@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { DefinePlugin } = require("webpack");
 const { VueLoaderPlugin} = require('vue-loader');
 const TerserPlugin = require("terser-webpack-plugin");
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolvePath = require('./path');
 
 // 导入生产环境配置和开发环境配置
@@ -33,6 +35,7 @@ const commonConfig = {
 		  }),
 		],
 		chunkIds:"deterministic",
+		runtimeChunk:"single",
 		/* 设置分包规则 */
 		splitChunks:{
 			chunks:"all",
@@ -54,8 +57,8 @@ const commonConfig = {
 		}
 	},
 	output: {
-		filename: "[name].bundle.js",
 		path: resolvePath("./build"),
+		filename: "[name].bundle.js",
 		chunkFilename:"[name].chunk.js"
 		// publicPath:"/"
 		// assetModuleFilename:"img/[name]-[hash:6][ext]"
@@ -64,7 +67,6 @@ const commonConfig = {
 		extensions:['.js', '.json', '.wasm','.jsx','.vue'],
 		mainFiles:['index','main']
 	},
-	
 	module: {
 		rules: [{
 				test: /\.less$/,
@@ -78,6 +80,15 @@ const commonConfig = {
 					},
 					"postcss-loader",
 					"less-loader",
+				]
+			},
+			{
+				test: /\.css/,
+				use: [
+					// "style-loader",
+					MiniCssExtractPlugin.loader,
+					"css-loader",
+					"postcss-loader",
 				]
 			},
 			{
@@ -107,6 +118,14 @@ const commonConfig = {
 			BASE_URL: JSON.stringify("./"),
 		}),
 		new VueLoaderPlugin(),
+		new webpack.ProvidePlugin({
+			axios:"axios",
+			get:["axios","get"],
+		}),
+		new MiniCssExtractPlugin({
+			filename:"[name]-[hash:6].css"
+		})
+		
 	],
 };
 

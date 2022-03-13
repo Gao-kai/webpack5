@@ -29,14 +29,20 @@
 
 
 /* 6. CodeSplit入口代码 */
-import "./test/common-key.js";
-import "./test/common-value.js";
-import _ from "lodash";
-console.log(_.join(['c','d']));
+// import "./test/common-key.js";
+// import "./test/common-value.js";
+// import _ from "lodash";
+// console.log(_.join(['c','d']));
 
-import(/* webpackChunkName:"tiny" */'./test/async1.js').then(res=>{
-	console.log(res);
-})
+// import(/* webpackChunkName:"tiny" */'./test/async1.js').then(res=>{
+// 	console.log(res);
+// })
+
+/* shimming代码 */
+import './test/shimming.js'
+
+/* 分离css代码 */
+import './css/index.css'
 
 
 /* 7. 代码懒加载 */
@@ -61,3 +67,5 @@ console.log('这是main.js入口相关的代码');
 if(module.hot){
 	module.hot.accept();
 }
+
+/* shimming代码 */
