@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[826],{1572:function(e,o,n){var s=dayjs,c=n.n(s);console.log(c()().format()),console.log("这是index.js入口相关的代码")}},function(e){var o;o=1572,e(e.s=o)}]);

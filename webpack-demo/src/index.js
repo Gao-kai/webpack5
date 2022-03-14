@@ -1,7 +1,7 @@
 // import "./test/common-key.js";
 // import "./test/common-value.js";
 
-// import dayjs from "dayjs";
+import dayjs from "dayjs";
 console.log(dayjs().format());
 
 // import(/* webpackChunkName:"cube" */'./test/async2.js').then(res=>{

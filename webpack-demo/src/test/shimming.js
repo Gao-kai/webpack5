@@ -1,2 +1,2 @@
-// import _ from "lodash";
+import _ from "lodash";
 console.log(_.join(['c','d']));

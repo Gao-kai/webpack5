@@ -61,7 +61,7 @@ btn.addEventListener('click',()=>{
 })
 
 
-console.log('这是main.js入口相关的代码');
+console.log('这是main.js入口相关的代码1');
 
 /* 7. HMR相关代码 代表当前文件支持HMR热更新 */
 if(module.hot){
