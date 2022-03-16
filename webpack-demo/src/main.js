@@ -4,11 +4,11 @@
 
 
 /* 2. React组件入口代码 */
-// import './react/index.jsx';
-// import ReactDom from "react-dom";
-// import React from 'react';
-// import App from './react/index.jsx'
-// ReactDom.render(<App/>,document.getElementById('app'));
+import './react/index.jsx';
+import ReactDom from "react-dom";
+import React from 'react';
+import App from './react/index.jsx'
+ReactDom.render(<App/>,document.getElementById('app'));
 
 
 /* 3. Vue组件入口代码 */
@@ -39,26 +39,26 @@
 // })
 
 /* shimming代码 */
-import './test/shimming.js'
+// import './test/shimming.js'
 
 /* 分离css代码 */
-import './css/index.css'
+// import './css/index.css'
 
 
 /* 7. 代码懒加载 */
-const btn = document.createElement('button');
-btn.innerHTML = "点击加载";
-document.body.appendChild(btn);
+// const btn = document.createElement('button');
+// btn.innerHTML = "点击加载";
+// document.body.appendChild(btn);
 
-btn.addEventListener('click',()=>{
-	import(
-	/* webpackChunkName:"lazyload" */
-	/* webpackPrefetch:true */
-	'./lazyload/element.js').then(({default:ele})=>{
-		console.log(ele);
-		document.body.appendChild(ele);
-	})
-})
+// btn.addEventListener('click',()=>{
+// 	import(
+// 	/* webpackChunkName:"lazyload" */
+// 	/* webpackPrefetch:true */
+// 	'./lazyload/element.js').then(({default:ele})=>{
+// 		console.log(ele);
+// 		document.body.appendChild(ele);
+// 	})
+// })
 
 
 console.log('这是main.js入口相关的代码1');
@@ -68,4 +68,3 @@ if(module.hot){
 	module.hot.accept();
 }
 
-/* shimming代码 */

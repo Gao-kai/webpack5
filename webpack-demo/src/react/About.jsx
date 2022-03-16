@@ -1,5 +1,5 @@
-// import React,{Component } from 'react';
-// import ReactDom from "react-dom";
+import React,{Component } from 'react';
+import ReactDom from "react-dom";
 
 // class About extends Component {
 // 	constructor(props) {

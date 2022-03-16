@@ -10,6 +10,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolvePath = require('./path');
+const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 
 // 导入生产环境配置和开发环境配置
 const prodConfig = require('./webpack.prod.js');
@@ -134,6 +135,14 @@ const commonConfig = (isProd) => {
 			}),
 			new MiniCssExtractPlugin({
 				filename: "css/[name]-[contenthash:6].css"
+			}),
+			new webpack.DllReferencePlugin({
+				context:resolvePath('./'),
+				manifest:resolvePath('./dll/react.manifest.json'),
+				
+			}),
+			new AddAssetHtmlWebpackPlugin({
+				filepath:resolvePath('./dll/dll_react.js')
 			})
 
 		],
