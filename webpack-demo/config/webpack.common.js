@@ -12,6 +12,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolvePath = require('./path');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 
+
 // 导入生产环境配置和开发环境配置
 const prodConfig = require('./webpack.prod.js');
 const devConfig = require('./webpack.dev.js');
@@ -36,12 +37,6 @@ const commonConfig = (isProd) => {
 			// shared:["lodash","dayjs"]
 		},
 		optimization: {
-			/* 禁用剥离注释功能  不生成LICENSE.txt文件*/
-			minimizer: [
-				new TerserPlugin({
-					extractComments: false,
-				}),
-			],
 			chunkIds: "deterministic",
 			runtimeChunk: "single",
 			/* 设置分包规则 */
@@ -136,14 +131,14 @@ const commonConfig = (isProd) => {
 			new MiniCssExtractPlugin({
 				filename: "css/[name]-[contenthash:6].css"
 			}),
-			new webpack.DllReferencePlugin({
-				context:resolvePath('./'),
-				manifest:resolvePath('./dll/react.manifest.json'),
+			// new webpack.DllReferencePlugin({
+			// 	context:resolvePath('./'),
+			// 	manifest:resolvePath('./dll/react.manifest.json'),
 				
-			}),
-			new AddAssetHtmlWebpackPlugin({
-				filepath:resolvePath('./dll/dll_react.js')
-			})
+			// }),
+			// new AddAssetHtmlWebpackPlugin({
+			// 	filepath:resolvePath('./dll/dll_react.js')
+			// })
 
 		],
 	};

@@ -1,7 +1,7 @@
 const path = require("path");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const resolvePath = require('./path');
-
+const webpack = require('webpack');
 module.exports = {
 	mode: "development",
 	devtool: "source-map",
@@ -31,5 +31,6 @@ module.exports = {
 	},
 	plugins: [
 		new ReactRefreshWebpackPlugin(),
+		new webpack.optimize.ModuleConcatenationPlugin()
 	],
 };

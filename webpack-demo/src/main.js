@@ -4,11 +4,11 @@
 
 
 /* 2. React组件入口代码 */
-import './react/index.jsx';
-import ReactDom from "react-dom";
-import React from 'react';
-import App from './react/index.jsx'
-ReactDom.render(<App/>,document.getElementById('app'));
+// import './react/index.jsx';
+// import ReactDom from "react-dom";
+// import React from 'react';
+// import App from './react/index.jsx'
+// ReactDom.render(<App/>,document.getElementById('app'));
 
 
 /* 3. Vue组件入口代码 */
@@ -42,7 +42,7 @@ ReactDom.render(<App/>,document.getElementById('app'));
 // import './test/shimming.js'
 
 /* 分离css代码 */
-// import './css/index.css'
+import './css/index.css'
 
 
 /* 7. 代码懒加载 */
@@ -60,6 +60,8 @@ ReactDom.render(<App/>,document.getElementById('app'));
 // 	})
 // })
 
+/* 8. terserPlugin */
+import './test/terserTest.js'
 
 console.log('这是main.js入口相关的代码1');
 
