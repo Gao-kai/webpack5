@@ -10,6 +10,7 @@ const resolvePath = require('./path');
 const CompressWebpackPlugin = require('compression-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
 	mode: "production",
@@ -68,7 +69,7 @@ module.exports = {
 			minRatio:0.8,
 			algorithm:'gzip'
 		}),
-		new InlineChunkHtmlPlugin(HtmlWebpackPlugin,[/runtime.+\.js/])
-		
+		new InlineChunkHtmlPlugin(HtmlWebpackPlugin,[/runtime.+\.js/]),
+		// new BundleAnalyzerPlugin()
 	],
 };

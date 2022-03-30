@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[179],{396:function(){console.log("utils模块加载成功"),console.log(10+20),console.log(window.demo),console.log("这是main.js入口相关的代码1"),console.log(function(a,b){return a*b}(10,20))}},function(__webpack_require__){var moduleId;moduleId=396,__webpack_require__(__webpack_require__.s=moduleId)}]);

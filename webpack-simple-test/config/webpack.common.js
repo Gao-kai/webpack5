@@ -11,7 +11,8 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolvePath = require('./path');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
-
+const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin');
+const smp = new SpeedMeasureWebpackPlugin();
 
 // 导入生产环境配置和开发环境配置
 const prodConfig = require('./webpack.prod.js');
@@ -171,5 +172,6 @@ module.exports = function(env) {
 	const webpackConfig = isProd ? merge(prodConfig, commonConfig(isProd)) : merge(devConfig, commonConfig(isProd));
 
 	console.log("webpackConfig: ", webpackConfig);
-	return webpackConfig;
+	// return webpackConfig;
+	return smp.wrap(webpackConfig);
 }

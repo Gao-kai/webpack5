@@ -11,6 +11,9 @@ console.log(window.demo);
 console.log('这是main.js入口相关的代码1');
 import './css/index.css'
 
+import {math} from 'gk-utils';
+console.log(math.mul(10,20));
+
 /* HMR相关代码 代表当前文件支持HMR热更新 */
 // if(module.hot){
 // 	module.hot.accept();

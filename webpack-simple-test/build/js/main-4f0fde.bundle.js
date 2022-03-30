@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[179],{747:function(){console.log(10+20),console.log(window.demo),console.log("这是main.js入口相关的代码1")}},function(__webpack_require__){var moduleId;moduleId=747,__webpack_require__(__webpack_require__.s=moduleId)}]);
