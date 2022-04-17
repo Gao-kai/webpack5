@@ -6,3 +6,4 @@ const webpackConfig = config({
 });
 
 const compiler = webpack(webpackConfig,()=>{});
+console.log('compiler',compiler);

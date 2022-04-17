@@ -1,0 +1,14 @@
+{
+	"type":"object",
+	"properties":{
+		"name":{
+			"type":"string",
+			"description":"name参数应该是一个字符串类型"
+		},
+		"age":{
+			"type":"number",
+			"description":"age参数应该是一个数字类型"
+		}
+	},
+	"additionalProperties":true
+}
